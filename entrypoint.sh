@@ -44,7 +44,7 @@ generateConfiguration() {
   fi
 
   # Configure nginx with SSL if certificates are existing
-  CERTIFICATE_PATH="${LETSENCRYPT_ROOT_CERTIFICATE_PATH}/${@}"
+  CERTIFICATE_PATH="${LETSENCRYPT_ROOT_CERTIFICATE_PATH}/${servers[0]}"
   if [ -f "${CERTIFICATE_PATH}/fullchain.pem" ]; then
     sed -e "s~NGINX_SERVERNAMES~${servers[*]}~g; s~LETSENCRYPT_CERTIFICATE_PATH~$CERTIFICATE_PATH~g" /etc/nginx/server-ssl.conf.model > "/etc/nginx/servers/server-${servers[0]}-ssl.conf"
   fi
