@@ -60,7 +60,7 @@ with replacing:
 
 #### With static content on Docker host ####
 
-Create a `docker-compose.xml` file, with the following content:
+Create a `docker-compose.yml` file, with the following content:
 ```
 version: '2'
 
@@ -120,7 +120,7 @@ Build the image:
 $ docker build -t nginx-with-content .
 ```
 
-Create a `docker-compose.xml` file, with the following content:
+Create a `docker-compose.yml` file, with the following content:
 ```
 version: '2'
 
