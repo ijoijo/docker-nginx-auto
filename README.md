@@ -1,6 +1,6 @@
 # Nginx auto #
 
-### What is this? ###
+## What is this? ##
 
 A Docker image for **Nginx** web server, with:
 * fully automated configuration based on Docker environment variables
@@ -14,10 +14,10 @@ This image can be used with **Let's encrypt**, in order to provide SSL certifica
 Associated **Let's encrypt** Docker image can be found here: https://hub.docker.com/r/ijoijo/letsencrypt/
 
 
-### How to use this image? ###
+## How to use this image? ##
 
-#### HTTP only (without SSL) ####
-##### With static content on Docker host #####
+### HTTP only (without SSL) ###
+#### With static content on Docker host ####
 
 ```bash
 $ docker run -v /some/content:/usr/share/nginx/html:ro -e "NGINX_SERVERNAMES=test.example.com" -p 8080:80 -d ijoijo/nginx-auto
@@ -27,7 +27,8 @@ with replacing:
 * `test.example.com` by your server name
 * `8080` by another port if needed, for ex. `80`
 
-##### With static content within the Docker image #####
+
+#### With static content within the Docker image ####
 
 Create a `Dockerfile`, with the following content:
 ```
@@ -48,14 +49,16 @@ with replacing:
 * `test.example.com` by your server name
 * `8080` by another port if needed, for ex. `80`
 
-#### HTTPS with Let's encrypt (with HTTP/2 support) ####
 
-##### Pre-requisites #####
+### HTTPS with Let's encrypt (with HTTP/2 support) ###
+
+#### Pre-requisites ####
 
 * Instructions below require **docker-compose** to be installed and running.
 * Your server needs to be accessible through Internet on port 80, and be registered on public DNS
 
-##### With static content on Docker host #####
+
+#### With static content on Docker host ####
 
 Create a `docker-compose.xml` file, with the following content:
 ```
@@ -104,7 +107,7 @@ Then start containers:
 $ docker-compose up -d
 ```
 
-##### With static content within the Docker image #####
+#### With static content within the Docker image ####
 
 Create a `Dockerfile`, with the following content:
 ```
@@ -162,11 +165,11 @@ Then start containers:
 $ docker-compose up -d
 ```
 
-### Contribution ###
+## Contribution ##
 
 Any suggestions and contributions are welcome and encouraged.
 
-### License ###
+## License ##
 
 * The code for this docker image is licensed under the [MIT License](LICENSE)
 * Nginx is licensed under the [BSD License](http://nginx.org/LICENSE)
